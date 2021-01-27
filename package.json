@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "private": true,
+  "scripts": {
+    "worker:build": "parcel build ./imports/ui/worker.js --no-cache --no-source-maps --out-file ./public/worker.js --out-dir ./public",
+    "start": "npm run worker:build && meteor run",
+    "postinstall": "npm run worker:build"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "js-sha256": "^0.9.0",
+    "meteor-node-stubs": "^1.0.1",
+    "threads": "^1.6.3"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
